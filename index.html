@@ -6,10 +6,8 @@
     <title>The Humble Minds | Open Community</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-      @import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
-      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
       :root {
         --background-color: #020010;
@@ -22,7 +20,7 @@
       }
 
       body {
-        font-family: 'Satoshi', 'Inter', sans-serif;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         background-color: var(--background-color);
         overflow-x: hidden;
         -webkit-font-smoothing: antialiased;
@@ -90,7 +88,8 @@
       }
       
       .font-serif {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: -0.02em;
       }
 
       .animate-fade-in {
@@ -114,11 +113,13 @@
       }
       
       .section-title {
-        font-size: 1.5rem; /* Adjusted size */
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.5rem;
         font-weight: 700;
-        margin-bottom: 1.5rem; /* Adjusted margin */
-        text-align: left; /* Changed to left */
+        margin-bottom: 1.5rem;
+        text-align: left;
         color: var(--text-primary);
+        letter-spacing: -0.01em;
       }
 
       .bento-box {
@@ -181,9 +182,9 @@
       }
 
       .header-unique-font {
-        font-family: 'Orbitron', 'Playfair Display', serif;
-        letter-spacing: 0.13em;
-        text-transform: uppercase;
+        font-family: 'Space Grotesk', sans-serif;
+        letter-spacing: 0.05em;
+        font-weight: 700;
       }
       .app-header {
         min-height: 80px;
