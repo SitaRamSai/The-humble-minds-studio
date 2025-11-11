@@ -36,8 +36,8 @@ const socialLinks = [
 const ConnectSection: React.FC = () => {
   return (
     <section id="connect">
-      <h2 className="section-title">Join the Community</h2>
-      <p className="text-gray-400 text-sm mb-6">
+      <h2 className="section-title text-2xl md:text-3xl">Join the Community</h2>
+      <p className="text-gray-400 text-sm md:text-base mb-6">
         Connect with fellow learners, share your journey, and grow together. Find us on these platforms:
       </p>
       <div className="flex flex-col gap-4">
