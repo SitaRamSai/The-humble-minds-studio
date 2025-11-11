@@ -5,9 +5,7 @@ const HomeSection: React.FC = () => {
     <section className="text-center flex flex-col items-center justify-center h-full">
       <div className="max-w-3xl">
         <div className="mb-4">
-          <span className="inline-block bg-white/10 text-purple-300 text-sm font-medium px-4 py-1.5 rounded-full">
-            The Humble Minds
-          </span>
+          {/* Removed 'The Humble Minds' from the hero section */}
         </div>
         <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-6">
           A Public Journey into AI Security

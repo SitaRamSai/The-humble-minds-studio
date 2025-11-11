@@ -9,6 +9,7 @@
       @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
       @import url('https://api.fontshare.com/v2/css?f[]=satoshi@700,500,400&display=swap');
       @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
       :root {
         --background-color: #020010;
@@ -179,13 +180,22 @@
         border-color: rgba(168, 85, 247, 0.3);
       }
 
+      .header-unique-font {
+        font-family: 'Orbitron', 'Playfair Display', serif;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
       .app-header {
+        min-height: 80px;
+        height: 100px;
+        display: flex;
+        align-items: center;
         position: fixed;
         top: 0;
         left: 0;
         right: 0;
         z-index: 50;
-        background: rgba(10, 8, 20, 0.6);
+        background: rgba(10, 8, 20, 0.7);
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(10px);
         border-bottom: 1px solid var(--border-color);
