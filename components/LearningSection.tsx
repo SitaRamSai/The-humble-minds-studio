@@ -22,7 +22,7 @@ const learningTopics = [
 const LearningSection: React.FC = () => {
   return (
     <section>
-      <h2 className="section-title">Learning Path</h2>
+      <h2 className="section-title">Sitaram's Learning Path</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {learningTopics.map((topic, index) => (
            <div key={index}>

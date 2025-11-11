@@ -22,7 +22,7 @@ const focusAreas = [
 const FocusSection: React.FC = () => {
   return (
     <section>
-      <h2 className="section-title">Focus Areas</h2>
+      <h2 className="section-title">Sitaram's Focus Areas</h2>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {focusAreas.map((area, index) => (
           <div key={index}>
