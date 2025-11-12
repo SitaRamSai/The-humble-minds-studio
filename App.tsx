@@ -5,6 +5,7 @@ import AboutSection from './components/AboutSection';
 import HomeSection from './components/HomeSection';
 import ContributorsSection from './components/ContributorsSection';
 import ConnectSection from './components/ConnectSection';
+import ContributorsSection from './components/ContributorsSection';
 import Header from './components/Header';
 
 const App: React.FC = () => {
