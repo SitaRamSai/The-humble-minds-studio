@@ -4,6 +4,7 @@ import FocusSection from './components/FocusSection';
 import AboutSection from './components/AboutSection';
 import HomeSection from './components/HomeSection';
 import ConnectSection from './components/ConnectSection';
+import ContributorsSection from './components/ContributorsSection';
 import Header from './components/Header';
 
 const App: React.FC = () => {
@@ -28,7 +29,11 @@ const App: React.FC = () => {
             <FocusSection />
           </div>
 
-          <div className="lg:col-span-3 surface-card animate-rise" style={{ animationDelay: `360ms` }}>
+          <div className="surface-card animate-rise" style={{ animationDelay: `360ms` }}>
+            <ContributorsSection />
+          </div>
+
+          <div className="lg:col-span-3 surface-card animate-rise" style={{ animationDelay: `440ms` }}>
             <AboutSection />
           </div>
         </div>

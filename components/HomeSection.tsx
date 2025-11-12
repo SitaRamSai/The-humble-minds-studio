@@ -8,7 +8,7 @@ const HomeSection: React.FC = () => {
         Explore. Learn. Contribute.
       </h1>
       <p className="hero-subtitle">
-        The Humble Minds is a community where learners explore cutting-edge security topics together. Discover what contributors like Sitaram are learning in AI security, blockchain, AR/VR/XR, and more. Share your own learning journey and grow alongside fellow explorers.
+        The Humble Minds is a community where learners explore cutting-edge security topics together. Discover what our contributors are learning in AI security, blockchain, AR/VR/XR, and more. Share your own learning journey and grow alongside fellow explorers.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <a href="#learning" className="cta-button">
