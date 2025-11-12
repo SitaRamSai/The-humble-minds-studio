@@ -3,19 +3,19 @@ import React from 'react';
 const HomeSection: React.FC = () => {
   return (
     <section className="flex flex-col items-center text-center gap-6">
-      <span className="section-eyebrow">Learning Collective Inspired by YC Launches</span>
+      <span className="section-eyebrow">Community-Driven Learning Platform</span>
       <h1 className="hero-title">
-        Learn fast, ship faster—together.
+        Explore. Learn. Contribute.
       </h1>
       <p className="hero-subtitle">
-        The Humble Minds is a builder-first community documenting what we are learning and shipping in real time. From AI security and engineering craft to product experiments, share your progress, get feedback, and find collaborators on the same wave.
+        The Humble Minds is a community where learners explore cutting-edge security topics together. Discover what contributors like Sitaram are learning in AI security, blockchain, AR/VR/XR, and more. Share your own learning journey and grow alongside fellow explorers.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
-        <a href="#connect" className="cta-button">
-          Join the community
+        <a href="#learning" className="cta-button">
+          Explore learning paths
         </a>
-        <a href="#focus" className="cta-secondary">
-          Explore focus areas
+        <a href="#connect" className="cta-secondary">
+          Join the community
         </a>
       </div>
     </section>
