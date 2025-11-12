@@ -1,9 +1,112 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The Humble Minds | Community Learning in AI Security, Blockchain & XR</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- Primary Meta Tags (Optimized for 2025 SEO) -->
+    <title>The Humble Minds - Join Our Open Learning Community for AI Security & Development</title>
+    <meta name="title" content="The Humble Minds - Join Our Open Learning Community for AI Security & Development" />
+    <meta name="description" content="Join The Humble Minds community: Learn AI security, share knowledge, and grow with passionate developers. Explore learning paths, connect with contributors, and collaborate." />
+    <meta name="keywords" content="AI security community, collaborative learning, knowledge sharing, open source community, developers community, machine learning security, humble minds, tech learning platform, programming community, AI development, cybersecurity learning, developer collaboration" />
+    <meta name="author" content="The Humble Minds Community" />
+    <meta name="theme-color" content="#2563eb" />
+
+    <!-- Geo Tags -->
+    <meta name="geo.region" content="US" />
+    <meta name="geo.position" content="global" />
+    <meta name="ICBM" content="global" />
+
+    <!-- Open Graph / Facebook (Complete Implementation) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.thehumbleminds.com/" />
+    <meta property="og:site_name" content="The Humble Minds" />
+    <meta property="og:title" content="The Humble Minds - Open Learning Community for AI Security & Development" />
+    <meta property="og:description" content="Join passionate learners exploring AI security, development best practices, and collaborative learning. Share knowledge and grow together." />
+    <meta property="og:image" content="https://www.thehumbleminds.com/og-image.png" />
+    <meta property="og:image:secure_url" content="https://www.thehumbleminds.com/og-image.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="The Humble Minds - Open Learning Community" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter Card (Enhanced) -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://www.thehumbleminds.com/" />
+    <meta name="twitter:title" content="The Humble Minds - Open Learning Community for AI Security" />
+    <meta name="twitter:description" content="Join passionate learners exploring AI security, development best practices, and collaborative learning. Share knowledge and grow together." />
+    <meta name="twitter:image" content="https://www.thehumbleminds.com/twitter-card.png" />
+    <meta name="twitter:image:alt" content="The Humble Minds Community" />
+    <meta name="twitter:creator" content="@thehumbleminds" />
+    <meta name="twitter:site" content="@thehumbleminds" />
+
+    <!-- Additional SEO Tags -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="bingbot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+    <meta name="rating" content="general" />
+    <meta name="distribution" content="global" />
+    <link rel="canonical" href="https://www.thehumbleminds.com/" />
+
+    <!-- Structured Data - Organization Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "The Humble Minds",
+      "url": "https://www.thehumbleminds.com",
+      "logo": "https://www.thehumbleminds.com/logo.png",
+      "description": "An open learning community where passionate individuals share knowledge, explore AI security, development practices, and grow together through collaborative learning.",
+      "foundingDate": "2024",
+      "sameAs": [
+        "https://github.com/thehumbleminds",
+        "https://twitter.com/thehumbleminds",
+        "https://linkedin.com/company/thehumbleminds"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Community Support",
+        "url": "https://www.thehumbleminds.com"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Website Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "The Humble Minds",
+      "url": "https://www.thehumbleminds.com",
+      "description": "Open learning community for AI security and development",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://www.thehumbleminds.com/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
+
+    <!-- Structured Data - Educational Organization Schema (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationalOrganization",
+      "name": "The Humble Minds",
+      "url": "https://www.thehumbleminds.com",
+      "description": "Community-driven learning platform focusing on AI security, machine learning, and collaborative development practices",
+      "educationalLevel": "All levels",
+      "audience": {
+        "@type": "EducationalAudience",
+        "educationalRole": "learner"
+      }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
@@ -61,11 +164,11 @@
       .hero-shell {
         position: relative;
         overflow: hidden;
-        padding: 4.5rem clamp(1.5rem, 4vw, 5rem);
-        border-radius: 2rem;
+        padding: 3rem clamp(1.5rem, 4vw, 3rem);
+        border-radius: 1.5rem;
         background: linear-gradient(135deg, rgba(37, 99, 235, 0.12), rgba(14, 165, 233, 0.2));
         border: 1px solid rgba(37, 99, 235, 0.18);
-        box-shadow: 0 35px 65px rgba(30, 64, 175, 0.15);
+        box-shadow: 0 20px 40px rgba(30, 64, 175, 0.12);
       }
 
       .hero-shell::after {
@@ -86,43 +189,44 @@
       .surface-card {
         background: var(--surface);
         border: 1px solid var(--surface-border);
-        border-radius: 1.5rem;
-        padding: clamp(1.75rem, 2.5vw, 2.5rem);
+        border-radius: 1.25rem;
+        padding: clamp(1.25rem, 2vw, 1.75rem);
         box-shadow: var(--surface-shadow);
         backdrop-filter: blur(6px);
       }
 
       .section-title {
         font-family: 'Sora', 'Inter', sans-serif;
-        font-size: clamp(1.5rem, 1.8vw, 1.9rem);
+        font-size: clamp(1.35rem, 1.8vw, 1.75rem);
         font-weight: 600;
-        margin-bottom: 1rem;
+        margin-bottom: 0.75rem;
         color: var(--text-primary);
         letter-spacing: -0.01em;
       }
 
       .section-subtitle {
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         color: var(--text-secondary);
-        margin-bottom: 2rem;
+        margin-bottom: 1.25rem;
+        line-height: 1.5;
       }
 
       .hero-title {
         font-family: 'Sora', 'Inter', sans-serif;
-        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-size: clamp(2.25rem, 5.5vw, 3.75rem);
         font-weight: 600;
-        line-height: 1.05;
+        line-height: 1.1;
         letter-spacing: -0.025em;
         color: var(--text-primary);
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
       }
 
       .hero-subtitle {
-        font-size: clamp(1.05rem, 1.8vw, 1.25rem);
-        line-height: 1.6;
+        font-size: clamp(0.95rem, 1.6vw, 1.1rem);
+        line-height: 1.55;
         color: var(--text-secondary);
-        margin-bottom: 2rem;
-        max-width: 52ch;
+        margin-bottom: 1.5rem;
+        max-width: 55ch;
         margin-left: auto;
         margin-right: auto;
       }
@@ -184,8 +288,9 @@
         background: rgba(248, 250, 252, 0.8);
         border: 1px solid rgba(148, 163, 184, 0.35);
         border-radius: 1rem;
-        padding: 1.25rem;
+        padding: 1rem;
         transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        height: 100%;
       }
 
       .content-card:hover {
@@ -210,9 +315,9 @@
       .connect-card {
         display: flex;
         align-items: center;
-        gap: 1rem;
-        padding: 1.15rem 1.25rem;
-        border-radius: 1rem;
+        gap: 0.875rem;
+        padding: 0.875rem 1rem;
+        border-radius: 0.875rem;
         border: 1px solid rgba(203, 213, 225, 0.7);
         background: rgba(255, 255, 255, 0.85);
         transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
