@@ -8,14 +8,14 @@ const learningTopics = [
     tags: ['Prompt Engineering', 'Data Security', 'LLM'],
   },
   {
-    title: 'Differential Privacy',
-    description: 'Studying methods to ensure individual data privacy within large datasets used for training AI, adding mathematical guarantees of anonymity.',
-    tags: ['Privacy', 'Cryptography', 'Data Science'],
+    title: 'Blockchain Security',
+    description: 'Investigating smart contract vulnerabilities, consensus mechanism attacks, and cryptographic implementations in decentralized systems.',
+    tags: ['Blockchain', 'Cryptography', 'Web3'],
   },
   {
-    title: 'Federated Learning Security',
-    description: 'Understanding vulnerabilities in distributed machine learning systems and developing defenses against model poisoning and inference attacks.',
-    tags: ['Distributed Systems', 'MLOps', 'Security'],
+    title: 'AR/VR/XR Security',
+    description: 'Examining privacy risks, data leakage, and attack vectors in augmented, virtual, and extended reality environments.',
+    tags: ['AR/VR', 'Privacy', 'Immersive Tech'],
   },
 ];
 
