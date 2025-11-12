@@ -11,11 +11,11 @@ const HomeSection: React.FC = () => {
         The Humble Minds is a welcoming community where passionate learners share knowledge, explore ideas, and support each other's growth. From AI security to development best practices, everyone's journey matters. Join us to learn from others, contribute your insights, and be part of a collaborative learning experience.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
-        <a href="#connect" className="cta-button">
-          Join the community
-        </a>
-        <a href="#learning" className="cta-secondary">
+        <a href="#learning" className="cta-button">
           Explore learning paths
+        </a>
+        <a href="#connect" className="cta-secondary">
+          Join the community
         </a>
       </div>
     </section>
