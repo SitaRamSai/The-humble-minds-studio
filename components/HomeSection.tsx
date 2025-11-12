@@ -8,7 +8,7 @@ const HomeSection: React.FC = () => {
         Learn fast, ship faster—together.
       </h1>
       <p className="hero-subtitle">
-        The Humble Minds is a builder-first community documenting what we are learning and shipping in real time. From AI security and engineering craft to product experiments, share your progress, get feedback, and find collaborators on the same wave.
+        The Humble Minds is a builder-first community documenting what we are learning and shipping in real time, especially in cutting-edge security topics. From AI security and engineering craft to product experiments, blockchain, AR/VR/XR, and more—share your progress, get feedback, and find collaborators or fellow explorers on the same wave.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <a href="#connect" className="cta-button">

@@ -24,7 +24,7 @@ const LearningSection: React.FC = () => {
     <section id="learning">
       <h2 className="section-title">Community Learning Paths</h2>
       <p className="section-subtitle">
-        Explore what community members are learning. These are real learning journeys from contributors like Sitaram. Add your own learning path to inspire others!
+        Explore what community members are learning. These are real learning journeys from contributors. Add your own learning path to inspire others!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {learningTopics.map((topic, index) => (
