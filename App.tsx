@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import LearningSection from './components/LearningSection';
 import FocusSection from './components/FocusSection';
 import AboutSection from './components/AboutSection';
@@ -7,56 +7,30 @@ import ConnectSection from './components/ConnectSection';
 import Header from './components/Header';
 
 const App: React.FC = () => {
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      const cards = document.querySelectorAll('.bento-box');
-      cards.forEach(card => {
-        const rect = (card as HTMLElement).getBoundingClientRect();
-        const x = e.clientX - rect.left;
-        const y = e.clientY - rect.top;
-        (card as HTMLElement).style.setProperty('--mouse-x', `${x}px`);
-        (card as HTMLElement).style.setProperty('--mouse-y', `${y}px`);
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-    };
-  }, []);
-
   return (
-    <div className="text-gray-100 min-h-screen animate-fade-in">
+    <div className="min-h-screen text-slate-900 animate-page-fade">
       <Header />
-      <main className="container mx-auto px-4 pt-24 pb-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-          
-          {/* Hero Section - Spanning 3 columns */}
-          <div className="md:col-span-3 bento-box animate-fade-in">
-            <HomeSection />
-          </div>
+      <main className="container mx-auto px-4 pt-28 pb-16">
+        <section className="hero-shell animate-rise" style={{ animationDelay: `0ms` }}>
+          <HomeSection />
+        </section>
 
-          {/* Learning Section - Spanning 2 columns */}
-          <div className="md:col-span-2 bento-box animate-fade-in" style={{ animationDelay: `100ms`}}>
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `120ms` }}>
             <LearningSection />
           </div>
 
-          {/* Connect Section - Spanning 1 column */}
-          <div className="md:row-span-2 bento-box animate-fade-in" style={{ animationDelay: `200ms`}}>
+          <div className="surface-card animate-rise" style={{ animationDelay: `200ms` }}>
             <ConnectSection />
           </div>
 
-          {/* Focus Section - Spanning 2 columns */}
-          <div className="md:col-span-2 bento-box animate-fade-in" style={{ animationDelay: `300ms`}}>
+          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `280ms` }}>
             <FocusSection />
           </div>
 
-          {/* About Section - Spanning 3 columns */}
-          <div className="md:col-span-3 bento-box animate-fade-in" style={{ animationDelay: `400ms`}}>
+          <div className="lg:col-span-3 surface-card animate-rise" style={{ animationDelay: `360ms` }}>
             <AboutSection />
           </div>
-
         </div>
       </main>
     </div>
