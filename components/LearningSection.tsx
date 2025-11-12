@@ -26,11 +26,9 @@ const LearningSection: React.FC = () => {
       <p className="section-subtitle">
         Explore what community members are learning. These are real learning journeys from contributors. Add your own learning path to inspire others!
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {learningTopics.map((topic, index) => (
-           <div key={index}>
-             <Card title={topic.title} description={topic.description} tags={topic.tags} />
-           </div>
+          <Card key={index} title={topic.title} description={topic.description} tags={topic.tags} />
         ))}
       </div>
     </section>
