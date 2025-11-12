@@ -3,6 +3,7 @@ import LearningSection from './components/LearningSection';
 import FocusSection from './components/FocusSection';
 import AboutSection from './components/AboutSection';
 import HomeSection from './components/HomeSection';
+import ContributorsSection from './components/ContributorsSection';
 import ConnectSection from './components/ConnectSection';
 import Header from './components/Header';
 
@@ -21,14 +22,18 @@ const App: React.FC = () => {
           </div>
 
           <div className="surface-card animate-rise" style={{ animationDelay: `200ms` }}>
-            <ConnectSection />
-          </div>
-
-          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `280ms` }}>
             <FocusSection />
           </div>
 
-          <div className="lg:col-span-3 surface-card animate-rise" style={{ animationDelay: `360ms` }}>
+          <div className="lg:col-span-3 surface-card animate-rise" style={{ animationDelay: `280ms` }}>
+            <ContributorsSection />
+          </div>
+
+          <div className="surface-card animate-rise" style={{ animationDelay: `360ms` }}>
+            <ConnectSection />
+          </div>
+
+          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `440ms` }}>
             <AboutSection />
           </div>
         </div>
