@@ -22,9 +22,10 @@ const learningTopics = [
 const LearningSection: React.FC = () => {
   return (
     <section>
-      <h2 className="section-title text-2xl md:text-3xl">Community Learning Paths</h2>
-      <p className="text-gray-400 text-sm md:text-base mb-6">
-        Explore what community members are learning. These are real learning journeys from contributors like Sitaram. Add your own learning path to inspire others!
+      <h2 className="section-title text-2xl md:text-3xl font-semibold">What people are learning</h2>
+      <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed">
+        Here's what some of us are exploring right now. These are real learning journeys from people like Sitaram.
+        Feel free to reach out if something resonates with you!
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {learningTopics.map((topic, index) => (

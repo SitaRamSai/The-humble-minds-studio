@@ -52,7 +52,7 @@ const App: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
 
           {/* Hero Section - Spanning 3 columns with more breathing room */}
-          <div className="md:col-span-3 bento-box animate-fade-in" style={{ minHeight: '600px' }}>
+          <div className="md:col-span-3 bento-box animate-fade-in" style={{ minHeight: '500px' }}>
             <HomeSection />
           </div>
 

@@ -22,9 +22,10 @@ const focusAreas = [
 const FocusSection: React.FC = () => {
   return (
     <section>
-      <h2 className="section-title text-2xl md:text-3xl">Community Focus Areas</h2>
-      <p className="text-gray-400 text-sm md:text-base mb-6">
-        Discover what community members are focusing on. From AI security to development best practices—see where people are diving deep and share your own expertise.
+      <h2 className="section-title text-2xl md:text-3xl font-semibold">Where we're going deep</h2>
+      <p className="text-gray-400 text-sm md:text-base mb-6 leading-relaxed">
+        Some areas where community members are spending time and building expertise.
+        From AI security to development practices—these are our current deep dives.
       </p>
        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {focusAreas.map((area, index) => (
