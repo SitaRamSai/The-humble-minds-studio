@@ -11,12 +11,12 @@ const App: React.FC = () => {
   return (
     <div className="min-h-screen text-slate-900 animate-page-fade">
       <Header />
-      <main className="container mx-auto px-4 pt-28 pb-16">
+      <main className="container mx-auto px-4 pt-24 pb-12 max-w-7xl">
         <section className="hero-shell animate-rise" style={{ animationDelay: `0ms` }}>
           <HomeSection />
         </section>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mt-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
           <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `120ms` }}>
             <LearningSection />
           </div>
