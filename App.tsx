@@ -5,7 +5,7 @@ import AboutSection from './components/AboutSection';
 import HomeSection from './components/HomeSection';
 import ContributorsSection from './components/ContributorsSection';
 import ConnectSection from './components/ConnectSection';
-import ContributorsSection from './components/ContributorsSection';
+import ContributorSpotlight from './components/ContributorSpotlight';
 import Header from './components/Header';
 
 const App: React.FC = () => {
@@ -34,7 +34,11 @@ const App: React.FC = () => {
             <ConnectSection />
           </div>
 
-          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `440ms` }}>
+          <div className="surface-card animate-rise" style={{ animationDelay: `420ms` }}>
+            <ContributorSpotlight />
+          </div>
+
+          <div className="lg:col-span-2 surface-card animate-rise" style={{ animationDelay: `500ms` }}>
             <AboutSection />
           </div>
         </div>
