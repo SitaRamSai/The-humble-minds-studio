@@ -3,12 +3,12 @@ import React from 'react';
 const HomeSection: React.FC = () => {
   return (
     <section className="flex flex-col items-center text-center gap-6">
-      <span className="section-eyebrow">Open Community for Curious Minds</span>
+      <span className="section-eyebrow">Humble Minds Community Hub</span>
       <h1 className="hero-title">
-        Where humble minds learn and grow together
+        Learn, build, and share inside a generous community
       </h1>
       <p className="hero-subtitle">
-        The Humble Minds is a community where learners explore cutting-edge security topics together. Discover what our contributors are learning in AI security, blockchain, AR/VR/XR, and more. Share your own learning journey and grow alongside fellow explorers.
+        The Humble Minds community brings together security-focused makers, thoughtful writers, and curious builders. Dive into living learning paths, co-create open knowledge in AI security, privacy, and emerging tech, and document your journey so the next learner can start faster.
       </p>
       <div className="flex flex-col sm:flex-row items-center gap-4">
         <a href="#learning" className="cta-button">

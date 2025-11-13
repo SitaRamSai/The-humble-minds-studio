@@ -3,8 +3,8 @@ import React from 'react';
 const socialLinks = [
   {
     name: 'GitHub',
-    url: '#', // Replace with your GitHub URL
-    description: 'Explore community projects and contribute to open-source initiatives.',
+    url: 'https://github.com/TheHumbleMinds',
+    description: 'Review community projects, open issues, and pair up on open-source experiments.',
     icon: (
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-slate-400 transition-colors duration-300 group-hover:text-blue-500">
         <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
@@ -21,10 +21,10 @@ const socialLinks = [
       </svg>
     ),
   },
-   {
-    name: 'X (Twitter)',
-    url: '#', // Replace with your X/Twitter URL
-    description: 'Join conversations, share updates, and engage with the community.',
+  {
+    name: 'Community X (Twitter)',
+    url: 'https://twitter.com/thehumbleminds',
+    description: 'Trade ideas, celebrate wins, and join community conversations in real-time.',
     icon: (
        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-8 h-8 text-slate-400 transition-colors duration-300 group-hover:text-blue-500">
         <path d="M18 6 6 18"></path><path d="m6 6 12 12"></path>
@@ -36,9 +36,9 @@ const socialLinks = [
 const ConnectSection: React.FC = () => {
   return (
     <section id="connect">
-      <h2 className="section-title">Join the Community</h2>
+      <h2 className="section-title">Stay Connected with Humble Minds</h2>
       <p className="section-subtitle">
-        Connect with fellow learners, share your journey, and grow together. Find us on these platforms:
+        Find your learning circle, share weekly wins, and stay informed about upcoming Humble Minds community gatherings.
       </p>
       <div className="flex flex-col gap-4">
         {socialLinks.map((link) => (
