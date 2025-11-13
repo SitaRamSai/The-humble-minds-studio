@@ -26,7 +26,7 @@ const FocusSection: React.FC = () => {
       <p className="section-subtitle">
         Discover what community members are focusing on. From AI security to development best practices—see where people are diving deep and share your own expertise.
       </p>
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {focusAreas.map((area, index) => (
           <div key={index}>
             <Card title={area.title} description={area.description} tags={area.tags} />
