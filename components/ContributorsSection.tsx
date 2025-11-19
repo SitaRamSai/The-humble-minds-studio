@@ -1,56 +1,35 @@
 import React from 'react';
 
-const contributors = [
-  {
-    name: 'Sitaram',
-    role: 'Community Member',
-    focus: 'AI Security & Machine Learning',
-    avatar: '🔐',
-    description: 'Exploring adversarial attacks, federated learning security, and building secure AI systems.',
-  },
-  // Add more contributors as they join
+const activeLearners = [
+  { name: 'Sita Ram', status: 'Adversarial attacks on LLMs', avatar: 'SR' },
 ];
 
 const ContributorsSection: React.FC = () => {
   return (
-    <section id="contributors">
-      <h2 className="section-title">Our Contributors</h2>
-      <p className="section-subtitle">
-        Meet the passionate individuals who make The Humble Minds community vibrant. Each member brings unique perspectives and learning experiences to share.
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {contributors.map((contributor, index) => (
-          <div key={index} className="content-card">
-            <div className="flex items-start gap-3 mb-3">
-              <div className="text-4xl">{contributor.avatar}</div>
-              <div className="flex-1">
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">
-                  {contributor.name}
-                </h3>
-                <p className="text-sm font-medium text-blue-600 mb-1">
-                  {contributor.role}
-                </p>
-                <p className="text-xs text-slate-500 font-semibold mb-2">
-                  {contributor.focus}
-                </p>
-              </div>
+    <section id="contributors" className="h-full flex flex-col">
+      <div className="mb-6">
+        <h2 className="text-2xl font-bold text-white mb-2">Active Learners</h2>
+        <p className="text-slate-400 text-sm">People growing right now.</p>
+      </div>
+
+      <div className="grid grid-cols-3 gap-4">
+        {activeLearners.map((learner, index) => (
+          <div key={index} className="flex flex-col items-center text-center group cursor-pointer">
+            <div className="w-12 h-12 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center text-white font-bold mb-2 group-hover:scale-110 group-hover:border-blue-500/50 transition-all">
+              {learner.avatar}
             </div>
-            <p className="text-sm text-slate-600 leading-relaxed">
-              {contributor.description}
-            </p>
+            <span className="text-xs font-medium text-white mb-1">{learner.name}</span>
+            <span className="text-[10px] text-slate-500 leading-tight max-w-[80px]">{learner.status}</span>
           </div>
         ))}
-        <div className="content-card border-dashed border-2 border-slate-300 flex flex-col items-center justify-center text-center p-6 min-h-[200px]">
-          <div className="text-5xl mb-3 opacity-40">✨</div>
-          <h3 className="text-lg font-semibold text-slate-700 mb-2">
-            Your Spot Awaits
-          </h3>
-          <p className="text-sm text-slate-500 mb-4">
-            Join our community and share your learning journey with others
-          </p>
-          <a href="#connect" className="text-sm font-semibold text-blue-600 hover:text-blue-500">
-            Get started →
-          </a>
+      </div>
+
+      <div className="mt-auto pt-6 text-center">
+        <p className="text-xs text-slate-500 mb-3">Join 42 others online</p>
+        <div className="flex justify-center -space-x-2">
+          {[1, 2, 3, 4].map(i => (
+            <div key={i} className="w-6 h-6 rounded-full bg-neutral-700 border border-black"></div>
+          ))}
         </div>
       </div>
     </section>

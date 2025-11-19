@@ -21,8 +21,8 @@ const ContributeSection: React.FC = () => {
           <p className="text-slate-600 leading-relaxed">Jump into open issues, build tools, or improve docs—every contribution helps.</p>
         </div>
         <div className="content-card">
-          <h3 className="text-lg font-semibold text-slate-900 mb-2">Join the Conversation</h3>
-          <p className="text-slate-600 leading-relaxed">Connect via GitHub, LinkedIn, and X to collaborate with the community.</p>
+          <h3 className="text-lg font-semibold text-white mb-2">Join the Conversation</h3>
+          <p className="text-slate-400 leading-relaxed">Connect via GitHub, LinkedIn, and X to collaborate with the community.</p>
         </div>
       </div>
     </section>

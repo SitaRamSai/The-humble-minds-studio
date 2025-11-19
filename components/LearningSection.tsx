@@ -1,37 +1,42 @@
 import React from 'react';
-import Card from './Card';
+import JourneyCard from './JourneyCard';
 
-const learningTopics = [
+const communityPaths = [
   {
     title: 'Adversarial Attacks on LLMs',
-    description: 'Exploring techniques like prompt injection, data poisoning, and model inversion to understand model vulnerabilities.',
-    tags: ['Prompt Engineering', 'Data Security', 'LLM'],
-  },
-  {
-    title: 'Blockchain Security',
-    description: 'Investigating smart contract vulnerabilities, consensus mechanism attacks, and cryptographic implementations in decentralized systems.',
-    tags: ['Blockchain', 'Cryptography', 'Web3'],
-  },
-  {
-    title: 'AR/VR/XR Security',
-    description: 'Examining privacy risks, data leakage, and attack vectors in augmented, virtual, and extended reality environments.',
-    tags: ['AR/VR', 'Privacy', 'Immersive Tech'],
+    author: 'Sita Ram',
+    role: 'Security Researcher',
+    progress: 45,
+    tags: ['LLM', 'Security', 'Adversarial'],
   },
 ];
 
 const LearningSection: React.FC = () => {
   return (
-    <section id="learning">
-      <h2 className="section-title">Community Learning Paths</h2>
-      <p className="section-subtitle">
-        Explore what community members are learning. These are real learning journeys from contributors. Add your own learning path to inspire others!
-      </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {learningTopics.map((topic, index) => (
-           <div key={index}>
-             <Card title={topic.title} description={topic.description} tags={topic.tags} />
-           </div>
+    <section id="learning" className="h-full flex flex-col">
+      <div className="mb-8">
+        <h2 className="text-2xl font-bold text-white mb-2">Community Paths</h2>
+        <p className="text-slate-400">Real learning journeys happening now.</p>
+      </div>
+
+      <div className="grid gap-4 flex-grow">
+        {communityPaths.map((path, index) => (
+          <JourneyCard
+            key={index}
+            title={path.title}
+            author={path.author}
+            role={path.role}
+            progress={path.progress}
+            tags={path.tags}
+          />
         ))}
+      </div>
+
+      <div className="mt-6 text-center">
+        <button className="text-sm font-medium text-blue-400 hover:text-blue-300 transition-colors flex items-center justify-center gap-2 w-full group">
+          View all paths
+          <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+        </button>
       </div>
     </section>
   );

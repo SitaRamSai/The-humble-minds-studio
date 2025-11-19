@@ -1,35 +1,32 @@
 import React from 'react';
-import Card from './Card';
 
-const focusAreas = [
-    {
-    title: 'Red Teaming for Generative AI',
-    description: 'Developing novel strategies to proactively identify and mitigate security flaws in generative models before they are exploited.',
-    tags: ['Red Teaming', 'GenAI', 'Proactive Security'],
-  },
-  {
-    title: 'Secure AI Development Lifecycles (SAIDL)',
-    description: 'Integrating security best practices into every stage of AI model development, from data collection to deployment and monitoring.',
-    tags: ['DevSecOps', 'AI Governance', 'MLOps'],
-  },
-  {
-    title: 'Explainable AI (XAI) for Threat Detection',
-    description: 'Leveraging XAI techniques to understand and debug security-critical AI decisions, improving trust and reliability of automated defense systems.',
-    tags: ['XAI', 'Threat Intelligence', 'Model Interpretability'],
-  },
+const activeTopics = [
+  { name: 'Adversarial Attacks', count: 1, trend: '+100%' },
+  { name: 'LLM Security', count: 1, trend: 'new' },
+  { name: 'Red Teaming', count: 1, trend: 'rising' },
 ];
 
 const FocusSection: React.FC = () => {
   return (
-    <section id="focus">
-      <h2 className="section-title">Community Focus Areas</h2>
-      <p className="section-subtitle">
-        Discover what community members are focusing on. From AI security to development best practices—see where people are diving deep and share your own expertise.
-      </p>
-       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {focusAreas.map((area, index) => (
-          <div key={index}>
-            <Card title={area.title} description={area.description} tags={area.tags} />
+    <section id="focus" className="h-full flex flex-col">
+      <div className="mb-6">
+        <div className="flex items-center gap-2 mb-2">
+          <span className="w-2 h-2 rounded-full bg-purple-500 animate-pulse"></span>
+          <h2 className="text-sm font-bold text-purple-400 uppercase tracking-wider">Active Topics</h2>
+        </div>
+        <p className="text-slate-400 text-sm">What we're building right now.</p>
+      </div>
+
+      <div className="flex flex-col gap-3 flex-grow">
+        {activeTopics.map((topic, index) => (
+          <div key={index} className="flex items-center justify-between p-3 rounded-lg bg-white/5 border border-white/5 hover:bg-white/10 transition-colors cursor-pointer group">
+            <span className="text-slate-200 font-medium group-hover:text-white transition-colors">{topic.name}</span>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-slate-500">{topic.count} active</span>
+              <span className={`text-xs font-mono ${topic.trend.includes('+') ? 'text-green-400' : 'text-slate-500'}`}>
+                {topic.trend}
+              </span>
+            </div>
           </div>
         ))}
       </div>
