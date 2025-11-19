@@ -137,13 +137,16 @@
       --geometric-shape: rgba(255, 255, 255, 0.03);
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       background-color: var(--page-bg);
       color: var(--text-primary);
       overflow-x: hidden;
       min-height: 100vh;
-      -webkit-font-smoothing: antialiased;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -387,6 +390,39 @@
     .cta-secondary:hover {
       background: rgba(255, 255, 255, 0.1);
       border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Additional Utility Classes for Google AI Studio Style */
+    @keyframes fade-in {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse-subtle {
+      0%, 100% {
+        opacity: 0.6;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+
+    /* Focus States for Accessibility */
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--accent-primary);
+      outline-offset: 2px;
+    }
+
+    /* Improved Transitions */
+    * {
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     }
   </style>
   <script type="importmap">

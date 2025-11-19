@@ -40,7 +40,7 @@ const App: React.FC = () => {
     <Router>
       <div className="min-h-screen text-white animate-page-fade bg-black">
         <Header />
-        <main className="container mx-auto px-4 pt-24 pb-12 max-w-7xl">
+        <main className="container mx-auto px-4 pt-32 pb-12 max-w-7xl">
           <Routes>
             <Route path="/" element={<HomePage />} />
             <Route path="/profile" element={<ProfileView />} />
