@@ -8,6 +8,7 @@ import ContributorsSection from './components/ContributorsSection';
 import ConnectSection from './components/ConnectSection';
 import Header from './components/Header';
 import ProfileView from './components/ProfileView';
+import AnimatedBackground from './components/AnimatedBackground';
 
 // Home Page Component
 const HomePage = () => (
@@ -39,13 +40,16 @@ const App: React.FC = () => {
   return (
     <Router>
       <div className="min-h-screen text-white animate-page-fade bg-black">
-        <Header />
-        <main className="container mx-auto px-4 pt-24 pb-12 max-w-7xl">
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/profile" element={<ProfileView />} />
-          </Routes>
-        </main>
+        <AnimatedBackground />
+        <div style={{ position: 'relative', zIndex: 1 }}>
+          <Header />
+          <main className="container mx-auto px-4 pt-24 pb-12 max-w-7xl">
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/profile" element={<ProfileView />} />
+            </Routes>
+          </main>
+        </div>
       </div>
     </Router>
   );
