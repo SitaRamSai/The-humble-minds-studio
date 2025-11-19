@@ -2,23 +2,23 @@ import React from 'react';
 
 const AboutSection: React.FC = () => {
   return (
-    <section>
-      <h2 className="section-title">About The Humble Minds</h2>
-      <div className="grid md:grid-cols-2 gap-x-8">
-        <p className="text-slate-600 leading-relaxed">
-          <a
-            href="https://www.thehumbleminds.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-500 font-semibold"
-          >
-            The Humble Minds
-          </a>{' '}
-          is an open community where passionate individuals share their learning journeys and projects. We're not a platform or organization—we're a collective of curious minds exploring different domains, from AI security to web development, data science, and beyond.
+    <section id="about" className="p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+      <div className="flex-1">
+        <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight font-serif">
+          We believe in<br />
+          <span className="text-stone-500">open learning.</span>
+        </h2>
+      </div>
+      <div className="flex-1 space-y-6 text-lg text-slate-400 font-light leading-relaxed">
+        <p>
+          <strong className="text-white font-medium">The Humble Minds</strong> is not just a platform; it's a movement. We are a collective of curious minds who believe that the best way to learn is to do it in public.
         </p>
-        <p className="text-slate-600 leading-relaxed mt-4 md:mt-0">
-          This is a space for learners, builders, and explorers. Share your learning paths, document your projects, and connect with others on similar journeys. Whether you're just starting out or deep into a specialized field, your contributions matter. Below you'll find some of the current focus areas from our community members—join us and add yours!
+        <p>
+          We document our failures, share our breakthroughs, and build together. Whether you're exploring AI security, Web3, or the next frontier of tech, you don't have to do it alone.
         </p>
+        <div className="pt-4">
+          <a href="#" className="text-white border-b border-white/20 hover:border-white pb-1 transition-all">Read our full manifesto →</a>
+        </div>
       </div>
     </section>
   );
