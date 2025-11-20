@@ -2,74 +2,69 @@ import React from 'react';
 
 const HomeSection: React.FC = () => {
   return (
-    <section className="w-full relative overflow-hidden">
-      <div className="bento-grid">
-        {/* Main Hero Block */}
-        <div className="bento-card col-span-1 md:col-span-4 md:row-span-2 flex flex-col justify-center relative group min-h-[500px] p-8 md:p-12">
-          {/* Background Elements */}
-          <div className="absolute top-0 right-0 p-12 opacity-20 group-hover:opacity-30 transition-opacity duration-700">
-            <div className="w-64 h-64 rounded-full bg-blue-600/20 blur-3xl animate-pulse-glow"></div>
+    <section className="w-full relative overflow-hidden pt-32 pb-16">
+      {/* Global Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-40 pointer-events-none"></div>
+
+      <div className="container mx-auto px-4 max-w-7xl relative z-10 flex flex-col items-center">
+
+        {/* --- 1. HERO HEADER --- */}
+        <div className="flex flex-col items-center text-center max-w-4xl mb-16">
+
+          {/* Social Proof Banner */}
+          <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/5 border border-white/10 text-slate-300 text-xs font-medium mb-8 backdrop-blur-sm hover:bg-white/10 transition-colors cursor-pointer">
+            <span className="flex items-center gap-1.5">
+              <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+              📚 247 people documenting
+            </span>
+            <span className="w-px h-3 bg-white/10"></span>
+            <span className="flex items-center gap-1.5">
+              🔥 12 new journeys today
+            </span>
+            <span className="w-px h-3 bg-white/10"></span>
+            <span className="flex items-center gap-1.5">
+              ✨ 5 breakthroughs shared
+            </span>
           </div>
 
-          <div className="relative z-10 flex flex-col h-full justify-between">
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-medium uppercase tracking-wider mb-8 backdrop-blur-sm">
-                <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
-                Community Active
-              </div>
+          {/* Main Heading */}
+          <h1 className="text-5xl md:text-7xl font-medium text-white tracking-tight mb-6 font-sans drop-shadow-2xl leading-tight">
+            Watch People Learn Tech<br />
+            <span className="text-slate-500">in Real-Time</span>
+          </h1>
 
-              <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tighter leading-[1.1] font-serif">
-                <span className="text-white">Curating knowledge,</span><br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-500">together.</span>
-              </h1>
+          {/* Subtitle */}
+          <p className="text-xl md:text-2xl text-slate-400 font-normal max-w-2xl mx-auto leading-relaxed mb-8">
+            Follow developers as they document learning AI Security, XR/VR, Blockchain & IoT.
+            <br className="hidden md:block" />
+            <span className="text-slate-200">No courses. No experts. Just real journeys—from confusion to clarity.</span>
+          </p>
 
-              <p className="text-xl text-stone-400 max-w-xl leading-relaxed font-light">
-                No experts, just learners. Document your journey, share your failures, and grow with a community of humble minds.
-              </p>
-            </div>
-
-            <div className="mt-12 flex flex-wrap gap-4">
-              <button className="px-8 py-4 bg-white text-black rounded-full font-semibold hover:scale-105 transition-transform duration-300 flex items-center gap-2">
-                Start Your Journey
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
-              </button>
-              <button className="px-8 py-4 bg-white/5 text-white border border-white/10 rounded-full font-semibold hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">
-                Explore Paths
-              </button>
-            </div>
+          {/* Action Buttons */}
+          <div className="mt-6 flex flex-wrap justify-center gap-4">
+            <button className="px-8 py-4 bg-white text-black rounded-lg font-bold hover:bg-slate-200 transition-colors flex items-center gap-2 shadow-lg shadow-white/10">
+              Start Documenting Your Journey
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"></path></svg>
+            </button>
+            <button className="px-8 py-4 bg-[#1a1a1a] text-white border border-white/10 rounded-lg font-semibold hover:bg-[#252525] transition-colors flex items-center gap-2">
+              Explore Learning Journeys
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+            </button>
           </div>
         </div>
 
-        {/* Secondary Block - Active Learners */}
-        <div className="bento-card col-span-1 md:col-span-2 flex flex-col justify-between p-8 relative overflow-hidden group">
-          <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-          <div className="flex -space-x-4 mb-6">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="w-12 h-12 rounded-full border-2 border-black bg-slate-800 flex items-center justify-center text-xs text-slate-400">
-                U{i}
+        {/* --- 2. FEATURE STRIP: What People Share --- */}
+        <div className="w-full max-w-5xl border-t border-white/10 pt-12">
+          <p className="text-center text-sm font-medium text-slate-500 uppercase tracking-wider mb-8">What People Share Here</p>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+            {['Learning Logs', 'Resource Lists', 'Struggle Points', 'Breakthrough Moments', 'Study Notes', 'Project Updates'].map((item, i) => (
+              <div key={i} className="flex items-center justify-center p-3 rounded-lg bg-white/5 border border-white/5 text-sm text-slate-300 font-medium text-center hover:bg-white/10 transition-colors cursor-default">
+                {item}
               </div>
             ))}
-            <div className="w-12 h-12 rounded-full border-2 border-black bg-slate-900 flex items-center justify-center text-xs text-white font-medium">
-              +42
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold text-white mb-2">Join the movement</h3>
-            <p className="text-slate-400">Developers documenting their growth right now.</p>
           </div>
         </div>
 
-        {/* Tertiary Block - Geometric Abstract */}
-        <div className="bento-card col-span-1 md:col-span-2 flex items-center justify-center relative overflow-hidden min-h-[240px]">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-900/20 via-black to-black"></div>
-          <div className="relative w-full h-full flex items-center justify-center">
-            <div className="w-32 h-32 border border-white/10 rounded-full animate-[spin_10s_linear_infinite]"></div>
-            <div className="absolute w-24 h-24 border border-blue-500/20 rounded-full animate-[spin_15s_linear_infinite_reverse]"></div>
-            <div className="absolute w-4 h-4 bg-blue-500 rounded-full blur-md animate-pulse"></div>
-          </div>
-        </div>
       </div>
     </section>
   );

@@ -1,35 +1,40 @@
 import React from 'react';
 
-const activeLearners = [
-  { name: 'Sita Ram', status: 'Adversarial attacks on LLMs', avatar: 'SR' },
-];
-
 const ContributorsSection: React.FC = () => {
   return (
-    <section id="contributors" className="h-full flex flex-col">
-      <div className="mb-6">
-        <h2 className="text-2xl font-bold text-white mb-2">Active Learners</h2>
-        <p className="text-slate-400 text-sm">People growing right now.</p>
+    <section id="contributors" className="h-full flex flex-col justify-center p-8">
+      <div className="mb-8">
+        <h2 className="text-3xl font-bold text-white mb-2 font-serif">Community Impact</h2>
+        <p className="text-slate-400 text-sm">How journeys inspire journeys.</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-4">
-        {activeLearners.map((learner, index) => (
-          <div key={index} className="flex flex-col items-center text-center group cursor-pointer">
-            <div className="w-12 h-12 rounded-full bg-neutral-800 border border-white/10 flex items-center justify-center text-white font-bold mb-2 group-hover:scale-110 group-hover:border-blue-500/50 transition-all">
-              {learner.avatar}
-            </div>
-            <span className="text-xs font-medium text-white mb-1">{learner.name}</span>
-            <span className="text-[10px] text-slate-500 leading-tight max-w-[80px]">{learner.status}</span>
-          </div>
-        ))}
-      </div>
+      <div className="space-y-6">
+        <div className="flex gap-4 items-start">
+          <div className="w-1 bg-blue-500/50 h-full rounded-full min-h-[40px]"></div>
+          <p className="text-lg text-slate-200 font-light leading-relaxed">
+            "Sarah's AI Security notes helped <span className="text-blue-400 font-medium">45 people</span> get unstuck"
+          </p>
+        </div>
 
-      <div className="mt-auto pt-6 text-center">
-        <p className="text-xs text-slate-500 mb-3">Join 42 others online</p>
-        <div className="flex justify-center -space-x-2">
-          {[1, 2, 3, 4].map(i => (
-            <div key={i} className="w-6 h-6 rounded-full bg-neutral-700 border border-black"></div>
-          ))}
+        <div className="flex gap-4 items-start">
+          <div className="w-1 bg-orange-500/50 h-full rounded-full min-h-[40px]"></div>
+          <p className="text-lg text-slate-200 font-light leading-relaxed">
+            "Tom's 30-day Blockchain journey sparked <span className="text-orange-400 font-medium">12 others</span> to start"
+          </p>
+        </div>
+
+        <div className="flex gap-4 items-start">
+          <div className="w-1 bg-purple-500/50 h-full rounded-full min-h-[40px]"></div>
+          <p className="text-lg text-slate-200 font-light leading-relaxed">
+            "15 people are learning WebXR together after <span className="text-purple-400 font-medium">Emma's breakthrough post</span>"
+          </p>
+        </div>
+
+        <div className="flex gap-4 items-start">
+          <div className="w-1 bg-green-500/50 h-full rounded-full min-h-[40px]"></div>
+          <p className="text-lg text-slate-200 font-light leading-relaxed">
+            "Marcus's debugging logs saved collective <span className="text-green-400 font-medium">100+ hours</span>"
+          </p>
         </div>
       </div>
     </section>

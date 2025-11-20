@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+// Switched to standard anchor tag to resolve Router Context issues in preview environment
 
 const Header: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -14,32 +14,29 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'py-4 bg-black/80 backdrop-blur-xl border-b border-white/5' : 'py-6 bg-transparent'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5' : 'bg-transparent'
         }`}
     >
-      <div className="container mx-auto px-4 max-w-7xl flex items-center justify-between">
-        <div className="flex items-center gap-2 group cursor-pointer">
-          <Link to="/">
-            <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center text-white font-bold group-hover:scale-110 transition-transform">
-              H
-            </div>
-          </Link>
-          <Link to="/" className="text-xl font-bold tracking-tight text-white">Humble Minds</Link>
-        </div>
+      <div className="w-full px-6 h-16 flex items-center justify-between max-w-[1400px] mx-auto">
+        {/* Logo Area - Simple white square icon */}
+        <a href="/" className="flex items-center gap-3 group">
+          <div className="w-8 h-8 rounded-md bg-[#1e1e1e] border border-white/10 flex items-center justify-center hover:border-white/20 transition-colors">
+            <div className="w-3 h-3 bg-white rounded-[1px]"></div>
+          </div>
+          <span className="text-white font-serif font-medium tracking-tight text-lg group-hover:text-slate-200 transition-colors">The Humble Minds</span>
+        </a>
 
-        <nav className="hidden md:flex items-center gap-8">
-          <a href="/#learning" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Journeys</a>
-          <a href="/#focus" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Focus</a>
-          <a href="/#contributors" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Community</a>
-          <a href="/#about" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">About</a>
-        </nav>
+        {/* Right Aligned Nav */}
+        <div className="flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8">
+            <a href="/#learning" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Journeys</a>
+            <a href="/#focus" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Focus</a>
+            <a href="/#contributors" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">Community</a>
+            <a href="/#about" className="text-sm font-medium text-slate-400 hover:text-white transition-colors">About</a>
+          </nav>
 
-        <div className="flex items-center gap-4">
-          <Link to="/profile" className="hidden md:flex text-sm font-medium text-white hover:text-blue-400 transition-colors">
-            Profile
-          </Link>
-          <button className="px-4 py-2 bg-white text-black text-sm font-semibold rounded-full hover:scale-105 transition-transform">
-            Join Now
+          <button className="px-4 py-2 bg-white/10 hover:bg-white/15 text-white text-sm font-medium rounded-lg transition-colors border border-white/5">
+            Get started
           </button>
         </div>
       </div>

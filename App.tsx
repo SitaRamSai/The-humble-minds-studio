@@ -1,11 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import LearningSection from './components/LearningSection';
-import FocusSection from './components/FocusSection';
+import JourneyTracks from './components/JourneyTracks';
+import CommunityPulse from './components/CommunityPulse';
 import AboutSection from './components/AboutSection';
 import HomeSection from './components/HomeSection';
 import ContributorsSection from './components/ContributorsSection';
 import ConnectSection from './components/ConnectSection';
+import BreakthroughsSection from './components/BreakthroughsSection';
 import Header from './components/Header';
 import ProfileView from './components/ProfileView';
 import AnimatedBackground from './components/AnimatedBackground';
@@ -17,18 +18,23 @@ const HomePage = () => (
       <HomeSection />
     </div>
     <div className="bento-grid">
-      <div className="bento-card col-span-1 md:col-span-4 animate-rise" style={{ animationDelay: `120ms` }}>
-        <LearningSection />
+      {/* Row 1: Journey Tracks (Main Content) & Community Pulse (Sidebar) */}
+      <div className="bento-card col-span-1 md:col-span-4 animate-rise h-[600px]" style={{ animationDelay: `120ms` }}>
+        <JourneyTracks />
       </div>
-      <div className="bento-card col-span-1 md:col-span-2 animate-rise" style={{ animationDelay: `200ms` }}>
-        <FocusSection />
+      <div className="bento-card col-span-1 md:col-span-2 animate-rise h-[600px]" style={{ animationDelay: `200ms` }}>
+        <CommunityPulse />
       </div>
+
+      {/* Row 2: Connections & Breakthroughs */}
       <div className="bento-card col-span-1 md:col-span-3 animate-rise" style={{ animationDelay: `280ms` }}>
         <ContributorsSection />
       </div>
       <div className="bento-card col-span-1 md:col-span-3 animate-rise" style={{ animationDelay: `360ms` }}>
-        <ConnectSection />
+        <BreakthroughsSection />
       </div>
+
+      {/* Row 3: How It Works (Full Width) */}
       <div className="bento-card col-span-1 md:col-span-6 animate-rise" style={{ animationDelay: `440ms` }}>
         <AboutSection />
       </div>
