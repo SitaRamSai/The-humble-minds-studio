@@ -65,36 +65,17 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. Featured Success Stories */}
-      <div className="mb-20">
-        <h2 className="text-2xl md:text-3xl font-bold text-white mb-10 text-center font-serif">Featured Success Stories</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 bg-white/5 border border-white/5 rounded-xl">
-            <p className="text-slate-300 italic mb-4 leading-relaxed">"I was stuck on authentication for a week. Found 3 others facing the same issue in the community. We solved it together."</p>
-            <p className="text-white font-medium text-sm">- Katie, Day 45</p>
-          </div>
-          <div className="p-6 bg-white/5 border border-white/5 rounded-xl">
-            <p className="text-slate-300 italic mb-4 leading-relaxed">"Someone's Day 10 notes helped me more than any tutorial. That's when I knew I had to share my journey too."</p>
-            <p className="text-white font-medium text-sm">- David, Day 78</p>
-          </div>
-          <div className="p-6 bg-white/5 border border-white/5 rounded-xl">
-            <p className="text-slate-300 italic mb-4 leading-relaxed">"My messy learning log has 500 followers. Turns out, people want real experiences, not perfect tutorials."</p>
-            <p className="text-white font-medium text-sm">- Ana, Day 120</p>
-          </div>
-        </div>
-      </div>
-
       {/* 4. Final CTA */}
       <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">Ready to start?</h2>
-        <p className="text-slate-400 text-lg mb-8">Your journey begins with Day 1. Someone out there needs to see it.</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">Ready to dive in?</h2>
+        <p className="text-slate-400 text-lg mb-8">Join us on GitHub and start exploring.</p>
         <div className="flex justify-center gap-4">
-          <button className="px-6 py-3 bg-white text-black rounded-lg font-bold hover:bg-slate-200 transition-colors">
-            Start Your Journey
-          </button>
-          <button className="px-6 py-3 bg-transparent text-white border border-white/20 rounded-lg font-medium hover:bg-white/10 transition-colors">
-            Browse Journeys
-          </button>
+          <a href="https://github.com/thehumbleminds" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black rounded-lg font-bold hover:bg-slate-200 transition-colors">
+            View on GitHub
+          </a>
+          <a href="#connect" className="px-6 py-3 bg-transparent text-white border border-white/20 rounded-lg font-medium hover:bg-white/10 transition-colors">
+            Connect with Us
+          </a>
         </div>
       </div>
 

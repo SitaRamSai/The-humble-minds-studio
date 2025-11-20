@@ -26,28 +26,6 @@ const updates: ActivityUpdate[] = [
         content: '"Finally cracked prompt injection! Here\'s what clicked..."',
         tags: ['PromptInjection', 'AISecurity'],
     },
-    {
-        id: '2',
-        author: 'Marcus Chen',
-        role: 'XR Developer',
-        avatarColor: 'bg-purple-600',
-        timeAgo: '5 hours ago',
-        type: 'ask',
-        stats: 'Day 12 • 89 followers',
-        content: '"Stuck on WebXR device API for 3 days. Anyone faced this?"',
-        tags: ['WebXR', 'NeedHelp'],
-    },
-    {
-        id: '3',
-        author: 'Emma Rodriguez',
-        role: 'Blockchain Learner',
-        avatarColor: 'bg-green-600',
-        timeAgo: 'today',
-        type: 'start',
-        stats: 'Day 1 • 12 followers',
-        content: '"Starting my Web3 journey. First stop: Understanding wallets"',
-        tags: ['Web3', 'Day1'],
-    },
 ];
 
 const CommunityPulse: React.FC = () => {

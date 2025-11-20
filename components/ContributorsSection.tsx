@@ -12,28 +12,7 @@ const ContributorsSection: React.FC = () => {
         <div className="flex gap-4 items-start">
           <div className="w-1 bg-blue-500/50 h-full rounded-full min-h-[40px]"></div>
           <p className="text-lg text-slate-200 font-light leading-relaxed">
-            "Sarah's AI Security notes helped <span className="text-blue-400 font-medium">45 people</span> get unstuck"
-          </p>
-        </div>
-
-        <div className="flex gap-4 items-start">
-          <div className="w-1 bg-orange-500/50 h-full rounded-full min-h-[40px]"></div>
-          <p className="text-lg text-slate-200 font-light leading-relaxed">
-            "Tom's 30-day Blockchain journey sparked <span className="text-orange-400 font-medium">12 others</span> to start"
-          </p>
-        </div>
-
-        <div className="flex gap-4 items-start">
-          <div className="w-1 bg-purple-500/50 h-full rounded-full min-h-[40px]"></div>
-          <p className="text-lg text-slate-200 font-light leading-relaxed">
-            "15 people are learning WebXR together after <span className="text-purple-400 font-medium">Emma's breakthrough post</span>"
-          </p>
-        </div>
-
-        <div className="flex gap-4 items-start">
-          <div className="w-1 bg-green-500/50 h-full rounded-full min-h-[40px]"></div>
-          <p className="text-lg text-slate-200 font-light leading-relaxed">
-            "Marcus's debugging logs saved collective <span className="text-green-400 font-medium">100+ hours</span>"
+            "Sita Ram's AI Security notes helped <span className="text-blue-400 font-medium">45 people</span> get unstuck"
           </p>
         </div>
       </div>
