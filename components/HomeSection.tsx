@@ -1,4 +1,5 @@
 import React from 'react';
+import Hero3DFeature from './Hero3DFeature';
 
 const HomeSection: React.FC = () => {
   return (
@@ -8,9 +9,11 @@ const HomeSection: React.FC = () => {
 
       <div className="container mx-auto px-4 max-w-7xl relative z-10 flex flex-col items-center">
 
-        {/* --- 1. HERO HEADER --- */}
-        {/* --- 1. HERO HEADER --- */}
-        <div className="flex flex-col items-start text-left max-w-6xl mb-16 w-full relative">
+        {/* --- 1. HERO HEADER WITH 3D FEATURE --- */}
+        <div className="w-full mb-16 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+
+          {/* Left Column: Text Content */}
+          <div className="flex flex-col items-start text-left relative order-2 lg:order-1">
 
           {/* Top Label */}
           <div className="mb-6 ml-2 md:ml-0 flex items-center gap-3">
@@ -50,6 +53,13 @@ const HomeSection: React.FC = () => {
               Currently exploring: <span className="text-slate-500">AI Security</span> • <span className="text-slate-500">VR/XR</span> • <span className="text-slate-500">Blockchain</span>
             </p>
           </div>
+          </div>
+
+          {/* Right Column: 3D Feature */}
+          <div className="relative order-1 lg:order-2">
+            <Hero3DFeature />
+          </div>
+
         </div>
 
         {/* --- 2. FEATURE STRIP: What People Share --- */}
