@@ -20,79 +20,82 @@ const AnimatedBackground: React.FC = () => {
     resizeCanvas();
     window.addEventListener('resize', resizeCanvas);
 
-    // Particle class
-    class Particle {
-      x: number;
-      y: number;
-      size: number;
-      speedX: number;
-      speedY: number;
-      opacity: number;
-      fadeDirection: number;
+    // Matrix digital rain effect
+    const chars = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+    const fontSize = 16;
+    const columns = Math.floor(canvas.width / fontSize);
+    const drops: number[] = [];
 
-      constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 0.5;
-        this.speedX = (Math.random() - 0.5) * 0.3;
-        this.speedY = (Math.random() - 0.5) * 0.3;
-        this.opacity = Math.random() * 0.5 + 0.2;
-        this.fadeDirection = Math.random() > 0.5 ? 1 : -1;
-      }
+    // Initialize drops with random starting positions
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+    }
 
-      update() {
-        this.x += this.speedX;
-        this.y += this.speedY;
+    const draw = () => {
+      // Semi-transparent black to create trailing effect
+      ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-        // Pulse effect
-        this.opacity += this.fadeDirection * 0.002;
-        if (this.opacity <= 0.1 || this.opacity >= 0.6) {
-          this.fadeDirection *= -1;
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        // Alternate between amber and green for unique look
+        const useAmber = i % 3 === 0; // More consistent pattern
+        const gradient = ctx.createLinearGradient(
+          0,
+          drops[i] * fontSize - fontSize * 4,
+          0,
+          drops[i] * fontSize
+        );
+
+        if (useAmber) {
+          gradient.addColorStop(0, 'rgba(251, 191, 36, 0)');
+          gradient.addColorStop(0.3, 'rgba(251, 191, 36, 0.5)');
+          gradient.addColorStop(0.7, 'rgba(251, 191, 36, 0.9)');
+          gradient.addColorStop(1, 'rgba(217, 119, 6, 1)');
+        } else {
+          gradient.addColorStop(0, 'rgba(34, 197, 94, 0)');
+          gradient.addColorStop(0.3, 'rgba(34, 197, 94, 0.5)');
+          gradient.addColorStop(0.7, 'rgba(34, 197, 94, 0.9)');
+          gradient.addColorStop(1, 'rgba(22, 163, 74, 1)');
         }
 
-        // Wrap around screen
-        if (this.x < 0) this.x = canvas.width;
-        if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height;
-        if (this.y > canvas.height) this.y = 0;
-      }
+        ctx.fillStyle = gradient;
+        const text = chars[Math.floor(Math.random() * chars.length)];
+        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
 
-      draw() {
-        if (!ctx) return;
-        ctx.fillStyle = `rgba(100, 150, 255, ${this.opacity})`;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-      }
-    }
+        // Reset drop when it reaches bottom
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
 
-    // Create particles
-    const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
-    const particles: Particle[] = [];
-    for (let i = 0; i < particleCount; i++) {
-      particles.push(new Particle());
-    }
+        drops[i]++;
+      }
+    };
 
     // Animation loop
     let animationFrameId: number;
-    const animate = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let lastTime = 0;
+    const fps = 20; // Control frame rate for Matrix effect
+    const interval = 1000 / fps;
 
-      // Draw particles
-      particles.forEach((particle) => {
-        particle.update();
-        particle.draw();
-      });
-
+    const animate = (currentTime: number) => {
       animationFrameId = requestAnimationFrame(animate);
+
+      const deltaTime = currentTime - lastTime;
+
+      if (deltaTime > interval) {
+        lastTime = currentTime - (deltaTime % interval);
+        draw();
+      }
     };
 
-    animate();
+    animate(0);
 
-    // Parallax effect
+    // Parallax effect (subtle)
     const handleMouseMove = (e: MouseEvent) => {
-      const moveX = (e.clientX - window.innerWidth / 2) * 0.01;
-      const moveY = (e.clientY - window.innerHeight / 2) * 0.01;
+      const moveX = (e.clientX - window.innerWidth / 2) * 0.005;
+      const moveY = (e.clientY - window.innerHeight / 2) * 0.005;
       if (container) {
         container.style.transform = `translate(${moveX}px, ${moveY}px)`;
       }
@@ -123,9 +126,8 @@ const AnimatedBackground: React.FC = () => {
         transition: 'transform 0.1s ease-out',
       }}
     >
-      {/* Base background with grid */}
+      {/* Base dark background */}
       <div
-        className="background-grid"
         style={{
           position: 'absolute',
           top: 0,
@@ -133,16 +135,10 @@ const AnimatedBackground: React.FC = () => {
           width: '100%',
           height: '100%',
           backgroundColor: '#0a0a0a',
-          backgroundImage: `
-            linear-gradient(rgba(42, 42, 42, 0.3) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(42, 42, 42, 0.3) 1px, transparent 1px)
-          `,
-          backgroundSize: '50px 50px',
-          animation: 'gridPulse 8s ease-in-out infinite',
         }}
       />
 
-      {/* Radial gradient overlay */}
+      {/* Scanning lines effect */}
       <div
         style={{
           position: 'absolute',
@@ -150,19 +146,52 @@ const AnimatedBackground: React.FC = () => {
           left: 0,
           width: '100%',
           height: '100%',
+          overflow: 'hidden',
+        }}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '2px',
+            background: 'linear-gradient(to right, transparent, rgba(251, 191, 36, 0.4), transparent)',
+            animation: 'scanVertical 8s ease-in-out infinite',
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            width: '100%',
+            height: '2px',
+            background: 'linear-gradient(to right, transparent, rgba(34, 197, 94, 0.4), transparent)',
+            animation: 'scanVertical 12s ease-in-out infinite 4s',
+          }}
+        />
+      </div>
+
+      {/* Radial gradient glow - Matrix themed */}
+      <div
+        style={{
+          position: 'absolute',
+          top: '20%',
+          left: '50%',
+          transform: 'translate(-50%, -50%)',
+          width: '80%',
+          height: '80%',
           background: `
             radial-gradient(
-              ellipse at 50% 20%,
-              rgba(30, 58, 138, 0.15) 0%,
-              rgba(15, 23, 42, 0.1) 30%,
-              rgba(10, 10, 10, 0) 60%
+              ellipse at center,
+              rgba(251, 191, 36, 0.08) 0%,
+              rgba(34, 197, 94, 0.05) 30%,
+              rgba(10, 10, 10, 0) 70%
             )
           `,
-          animation: 'gradientShift 10s ease-in-out infinite alternate',
+          animation: 'pulse 6s ease-in-out infinite alternate',
+          filter: 'blur(40px)',
         }}
       />
 
-      {/* Canvas for particles */}
+      {/* Canvas for Matrix digital rain */}
       <canvas
         ref={canvasRef}
         style={{
@@ -171,24 +200,50 @@ const AnimatedBackground: React.FC = () => {
           left: 0,
           width: '100%',
           height: '100%',
+          opacity: 0.5,
         }}
       />
 
-      {/* Subtle animated dots overlay */}
+      {/* Vignette overlay for depth */}
       <div
-        className="dots-overlay"
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundImage: `radial-gradient(circle, rgba(100, 150, 255, 0.1) 1px, transparent 1px)`,
-          backgroundSize: '30px 30px',
-          opacity: 0.3,
-          animation: 'dotsFloat 20s linear infinite',
+          background: 'radial-gradient(ellipse at center, transparent 0%, rgba(10, 10, 10, 0.7) 100%)',
+          pointerEvents: 'none',
         }}
       />
+
+      {/* Additional CSS animations */}
+      <style>{`
+        @keyframes scanVertical {
+          0% {
+            top: -2px;
+            opacity: 0;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            top: 100%;
+            opacity: 0;
+          }
+        }
+
+        @keyframes pulse {
+          0%, 100% {
+            opacity: 0.6;
+            transform: translate(-50%, -50%) scale(1);
+          }
+          50% {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      `}</style>
     </div>
   );
 };

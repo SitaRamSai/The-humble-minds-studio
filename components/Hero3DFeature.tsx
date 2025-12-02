@@ -1,66 +1,11 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Hero3DFeature: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const cubeRef = useRef<HTMLDivElement>(null);
   const rotationRef = useRef({ x: 0, y: 0 });
   const targetRotationRef = useRef({ x: 20, y: 30 });
   const animationFrameRef = useRef<number>();
-  const [matrixColumns, setMatrixColumns] = useState<any[]>([]);
-
-  // Matrix digital rain effect
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    canvas.width = canvas.offsetWidth;
-    canvas.height = canvas.offsetHeight;
-
-    const chars = 'ｱｲｳｴｵｶｷｸｹｺｻｼｽｾｿﾀﾁﾂﾃﾄﾅﾆﾇﾈﾉﾊﾋﾌﾍﾎﾏﾐﾑﾒﾓﾔﾕﾖﾗﾘﾙﾚﾛﾜﾝ01234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-    const fontSize = 14;
-    const columns = Math.floor(canvas.width / fontSize);
-    const drops: number[] = Array(columns).fill(1);
-
-    const draw = () => {
-      ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-      ctx.font = `${fontSize}px monospace`;
-
-      for (let i = 0; i < drops.length; i++) {
-        // Alternate between amber and green for unique look
-        const useAmber = Math.random() > 0.5;
-        const gradient = ctx.createLinearGradient(0, drops[i] * fontSize - fontSize * 3, 0, drops[i] * fontSize);
-
-        if (useAmber) {
-          gradient.addColorStop(0, 'rgba(251, 191, 36, 0)');
-          gradient.addColorStop(0.5, 'rgba(251, 191, 36, 0.8)');
-          gradient.addColorStop(1, 'rgba(217, 119, 6, 1)');
-        } else {
-          gradient.addColorStop(0, 'rgba(34, 197, 94, 0)');
-          gradient.addColorStop(0.5, 'rgba(34, 197, 94, 0.8)');
-          gradient.addColorStop(1, 'rgba(22, 163, 74, 1)');
-        }
-
-        ctx.fillStyle = gradient;
-        const text = chars[Math.floor(Math.random() * chars.length)];
-        ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
-        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-          drops[i] = 0;
-        }
-        drops[i]++;
-      }
-    };
-
-    const interval = setInterval(draw, 50);
-
-    return () => clearInterval(interval);
-  }, []);
 
   // 3D cube rotation with mouse tracking
   useEffect(() => {
@@ -117,19 +62,7 @@ const Hero3DFeature: React.FC = () => {
       className="relative w-full h-full min-h-[500px] flex items-center justify-center"
       style={{ perspective: '1200px' }}
     >
-      {/* Matrix Digital Rain Background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full opacity-40"
-      />
-
-      {/* Scanning lines effect */}
-      <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-amber-400/50 to-transparent animate-scan" />
-        <div className="absolute w-full h-[2px] bg-gradient-to-r from-transparent via-green-400/50 to-transparent animate-scan-delayed" />
-      </div>
-
-      {/* Radial gradient glow */}
+      {/* Localized glow effect for 3D cube */}
       <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
         <div className="w-[500px] h-[500px] bg-gradient-radial from-amber-500/20 via-green-500/10 to-transparent rounded-full blur-3xl animate-pulse-slow" />
       </div>
@@ -319,42 +252,6 @@ const Hero3DFeature: React.FC = () => {
       </div>
 
       <style jsx>{`
-        @keyframes scan {
-          0% {
-            top: 0%;
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            top: 100%;
-            opacity: 0;
-          }
-        }
-
-        @keyframes scan-delayed {
-          0% {
-            top: 0%;
-            opacity: 0;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            top: 100%;
-            opacity: 0;
-          }
-        }
-
-        .animate-scan {
-          animation: scan 4s ease-in-out infinite;
-        }
-
-        .animate-scan-delayed {
-          animation: scan-delayed 6s ease-in-out infinite 2s;
-        }
-
         @keyframes glitch {
           0%, 100% {
             transform: translate(0);
