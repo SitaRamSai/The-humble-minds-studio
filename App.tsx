@@ -8,14 +8,18 @@ import Header from './components/Header';
 import ProfileView from './components/ProfileView';
 import AnimatedBackground from './components/AnimatedBackground';
 
+import BentoGridSection from './components/BentoGridSection';
+import PeoplePage from './components/PeoplePage';
+
 // Home Page Component
 const HomePage = () => (
   <div className="space-y-24">
     <HomeSection />
-    <AboutSection />
     <div className="container mx-auto px-4 max-w-6xl">
       <JourneyTracks />
     </div>
+    <BentoGridSection />
+    <AboutSection />
     <ConnectSection />
   </div>
 );
@@ -31,6 +35,7 @@ const App: React.FC = () => {
             <Routes>
               <Route path="/" element={<HomePage />} />
               <Route path="/profile" element={<ProfileView />} />
+              <Route path="/people" element={<PeoplePage />} />
             </Routes>
           </main>
         </div>

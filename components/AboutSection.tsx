@@ -65,19 +65,7 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
 
-      {/* 4. Final CTA */}
-      <div className="text-center max-w-2xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-serif">Ready to dive in?</h2>
-        <p className="text-slate-400 text-lg mb-8">Join us on GitHub and start exploring.</p>
-        <div className="flex justify-center gap-4">
-          <a href="https://github.com/thehumbleminds" target="_blank" rel="noopener noreferrer" className="px-6 py-3 bg-white text-black rounded-lg font-bold hover:bg-slate-200 transition-colors">
-            View on GitHub
-          </a>
-          <a href="#connect" className="px-6 py-3 bg-transparent text-white border border-white/20 rounded-lg font-medium hover:bg-white/10 transition-colors">
-            Connect with Us
-          </a>
-        </div>
-      </div>
+
 
     </section>
   );
