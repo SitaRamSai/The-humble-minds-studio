@@ -2,19 +2,27 @@ import React from 'react';
 
 const ConnectSection: React.FC = () => {
   return (
-    <section id="connect" className="h-full flex flex-col justify-center">
-      <h2 className="text-3xl font-bold text-white mb-6">Join the<br />Conversation.</h2>
+    <section id="connect" className="py-32 flex flex-col items-center justify-center relative overflow-hidden">
+      {/* Massive Branding */}
+      <h1 className="text-[12vw] leading-none font-black text-white/10 tracking-tighter select-none pointer-events-none text-center">
+        THE HUMBLE<br />MINDS
+      </h1>
 
-      <div className="space-y-4">
-        <a href="#" className="block p-4 rounded-xl bg-white text-black font-bold text-lg hover:scale-105 transition-transform text-center">
-          Join Discord Community
-        </a>
-        <a href="#" className="block p-4 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-colors text-center">
-          Follow on Twitter
-        </a>
-        <a href="#" className="block p-4 rounded-xl bg-white/5 border border-white/10 text-white font-bold text-lg hover:bg-white/10 transition-colors text-center">
-          Contribute on GitHub
-        </a>
+      {/* Follow Us Section - Overlaying or below */}
+      <div className="mt-12 flex flex-col items-center gap-6 z-10">
+        <p className="text-sm font-medium text-slate-500 uppercase tracking-[0.2em]">Follow Us</p>
+
+        <div className="flex items-center gap-8">
+          <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium hover:underline decoration-white/20 underline-offset-4">
+            Discord
+          </a>
+          <a href="#" className="text-slate-400 hover:text-white transition-colors text-sm font-medium hover:underline decoration-white/20 underline-offset-4">
+            Twitter
+          </a>
+          <a href="https://github.com/thehumbleminds" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white transition-colors text-sm font-medium hover:underline decoration-white/20 underline-offset-4">
+            GitHub
+          </a>
+        </div>
       </div>
     </section>
   );
